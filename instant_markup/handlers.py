@@ -48,14 +48,14 @@ class HTMLRenderer(handler):
     def end_listitem(self):
         print('</li>')
     def start_title(self):
-        print('<hl>')
+        print('<h1>')
     def end_title(self):
         print('</hl>')
     def sub_emphasis(self,match):
-        return '<em>%s</em>'%match.group(0)
+        return '<em>%s</em>'%match.group(1)
     def sub_url(self,match):
-        return '<a> href="%s">%s</a>\.<br>'%(match.group(0),match.group(0))
+        return '<a href="%s">%s</a>'%(match.group(1),match.group(1))
     def sub_mail(self,match):
-        return '<a> href="mailto:%s">%s</a>\.<br>'%(match.group(0),match.group(0))
+        return '<a href="mailto:%s">%s</a>'%(match.group(1),match.group(1))
     def feed(self,data):
         print(data)        
