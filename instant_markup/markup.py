@@ -43,7 +43,7 @@ class BasicTextParser(Parser):
         self.addRule(ParagraphRule())
         
         self.addFilter(r'\*(.+?)\*','emphasis')
-        self.addFilter(r'(http://[\.a-zA-Z]+)','url')
+        self.addFilter(r'(http://[\.a-zA-Z/]+)','url')
         self.addFilter(r'(http://[\.a-zA-Z]+@[\.a-zA-Z]+[a-zA-Z]+)','mail')
     
 
