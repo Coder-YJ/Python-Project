@@ -3,13 +3,13 @@
 import sys,re
 from util import *
 
-print ('<html><head><title>...</title></body>')
+print ('<html><head><title>...</title><body>')
 
 #f = open("E:/Python-Project/instant markup/text_input.txt")
 
 title = True
 for block in blocks(sys.stdin):
-    block = re.sub(r'\*(.+?)\*',r'<em>\1<em>',block)
+    block = re.sub(r'\*(.+?)\*',r'<em>\1</em>',block)
     if title:
         print('<hl>')
         print(block)
@@ -19,3 +19,5 @@ for block in blocks(sys.stdin):
         print('<p>')
         print(block)
         print('</p>')
+    
+print('</body></html>')
