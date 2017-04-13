@@ -44,11 +44,12 @@ class BasicTextParser(Parser):
         
         self.addFilter(r'\*(.+?)\*','emphasis')
         self.addFilter(r'(http://[\.a-zA-Z/]+)','url')
-        self.addFilter(r'(http://[\.a-zA-Z]+@[\.a-zA-Z]+[a-zA-Z]+)','mail')
+        self.addFilter(r'([\.a-zA-Z]+@[\.a-zA-Z]+[a-zA-Z]+)','mail')
     
 
 handler = HTMLRenderer()
 parser = BasicTextParser(handler)
 
 parser.parse(sys.stdin)
+#parser.parse(open('E://Python-Project/instant_markup/test_input.txt'))
                 

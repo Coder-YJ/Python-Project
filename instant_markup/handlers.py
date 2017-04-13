@@ -18,6 +18,7 @@ class handler:
         def substitution(match):
             result = self.callback('sub_',name,match)
             if result is None:result = match.group(0)
+            return result
         return substitution     
 
 class HTMLRenderer(handler):
@@ -28,7 +29,7 @@ class HTMLRenderer(handler):
     sub()方法来访问。他们实现了用于html文档的基本标签。
     """
     def start_document(self):
-        print('<html><head><title>...</title></head><body>')
+        print('<html><head><title>First Html Page</title></head><body>')
     def end_document(self):
         print('</body></html>')
     def start_paragraph(self):
