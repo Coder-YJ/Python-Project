@@ -42,7 +42,6 @@ class WebsiteConstructor(Dispathcer,ContentHandler):
     def defaultEnd(self,name):
         if self.passthrough:
             self.out.write('</%s>'%name)    
-
     def startDirectory(self,attrs):
         self.directory.append(attrs['name'])
         self.ensureDirectory()
